@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+
 body { 
 	margin: 0; 
 	padding: 0; 
-	font: 1em "Trebuchet MS", verdana, arial, sans-serif; font-size: 100%;
-	background: #bbb;
+	font: 1em 'Maven Pro', sans-serif;
+	font-size: 100%;
+	line-height: 1.6;
+	background: #f1f1f5;
 }
 
 div.container { 
 	margin: auto; 
-	width: 80%; 
+	width: 80%;
 }
 
 h1 {
@@ -16,8 +20,9 @@ h1 {
 }
 ul.tabNavigation {
     list-style: none;
-    margin: 0 0 0 25px;
-    padding: 0;
+    margin: 0 0 -1px 25px;
+	padding: 0;
+	line-height: normal;
 }
 
 ul.tabNavigation li {
@@ -26,23 +31,29 @@ ul.tabNavigation li {
 }
 
 ul.tabNavigation li a {
-    padding: 10px 10px 0 10px;
-    background-color: #ddd;
+	display: inline-block;
+    padding: 10px 20px 10px 20px;
+    background-color: #f2f2f7;
     color: #000;
     text-decoration: none;
-	border: 1px solid #888;
-	border-top-right-radius: 5px;
-	border-top-left-radius: 5px;
+	border: 1px solid #ccccd3;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+
+	transition: all ease 0.25s;
 }
 
 ul.tabNavigation li a:hover {
-	background-color: #eee;
+	background-color: #e4e4ea;
+	transform: scale(1.05);
 }	
 
 ul.tabNavigation li a.selected {
     background-color: #FFF;
     color: #333;
 	border-bottom: 1px solid #FFF;
+	z-index: 20;
+    position: relative;
 }
 	
 ul.tabNavigation li a:focus {
@@ -50,10 +61,19 @@ ul.tabNavigation li a:focus {
 }
 
 div.tabs > div {
-	padding: 25px;
-	border: 1px solid #888;
+	position: relative;
+
+	padding: 80px;
+	border: 1px solid #ccccd3;
     background-color: #FFF;
-	border-radius: 5px;
+	border-radius: 4px;
+
+	overflow: hidden;
+}
+
+div.tabs > div .wrapper {
+	transform: translateX(-50px);
+	opacity: 0;
 }
 
 div.tabs > div h2 {
