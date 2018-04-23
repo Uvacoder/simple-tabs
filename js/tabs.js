@@ -1,20 +1,22 @@
 // Tab Panels
 $(document).ready(function(){
 
-	let tabs = {
+	const tabs = {
 
 		tabContainers: $('div.tabs > div'),
 		tabLinks: $('div.tabs ul.tabNavigation a'),
 
 
-		// Initializes the tabs
+		/**
+		 * Initializes the tabs
+		 */
 		initialize: function() {
 			this.activateFirstTab();
 			this.bindClickHandler();
 		},
 
 		/**
-		 * Binds a click handler that switches tabs
+		 * Binds a click handler that switches tabs.
 		 */
 		bindClickHandler: function() {
 			const self = this;
@@ -76,7 +78,7 @@ $(document).ready(function(){
 		},
 
 		/**
-		 * Activates the first tab when page is loaded
+		 * Activates the first tab when the page is loaded.
 		 */
 		activateFirstTab: function() {
 			this.tabLinks.first().addClass('selected');
